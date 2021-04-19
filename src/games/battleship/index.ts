@@ -1,4 +1,5 @@
 import "phaser";
+import { MainScene } from "./main-scene";
 
 const config: Phaser.Types.Core.GameConfig = {
   title: "Battleships",
@@ -10,14 +11,17 @@ const config: Phaser.Types.Core.GameConfig = {
 
 export class BattleshipGame extends Phaser.Game {
   constructor(config: Phaser.Types.Core.GameConfig) {
-    const myConfig = {
-      title: "Battleships",
+    const defaultConfig = {
       width: 800,
       height: 600,
       parent: "game",
-      backgroundColor: "#18216D",
     };
-    Object.assign(myConfig, config);
-    super(myConfig);
+    const myConfig = {
+      title: "Battleships",
+      backgroundColor: "#18216D",
+      scene: [MainScene],
+    };
+    Object.assign(defaultConfig, config, myConfig);
+    super(defaultConfig);
   }
 }

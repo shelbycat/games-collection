@@ -21,8 +21,10 @@ module.exports = {
         test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
         loader: "file-loader",
         options: {
-          name: "[name].[ext]",
+          outputPath: "./assets/images",
+          publicPath: "./assets/images",
         },
+        // type: "asset/resource",
       },
     ],
   },
