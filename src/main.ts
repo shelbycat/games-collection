@@ -1,10 +1,10 @@
-import "~/web-container/main";
-import { BattleshipGame } from "games/battleship";
+import "~/web-container/main"
+import { BattleshipGame } from "games/battleship"
 
 const gameConfig = {
   parent: "game",
-};
+}
 
 window.onload = () => {
-  var game = new BattleshipGame(gameConfig);
-};
+  var game = new BattleshipGame(gameConfig)
+}
