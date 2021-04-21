@@ -3,17 +3,17 @@ import { MainScene } from "./main-scene"
 
 const config: Phaser.Types.Core.GameConfig = {
   title: "Battleships",
-  width: 800,
-  height: 600,
+  width: 1024,
+  height: 576,
   parent: "game",
   backgroundColor: "#18216D",
 }
 
 export class BattleshipGame extends Phaser.Game {
   constructor(config: Phaser.Types.Core.GameConfig) {
-    const defaultConfig = {
-      width: 800,
-      height: 600,
+    const defaultConfig: Phaser.Types.Core.GameConfig = {
+      width: 1024,
+      height: 576,
       parent: "game",
     }
     const myConfig = {

@@ -8,3 +8,5 @@ const gameConfig = {
 window.onload = () => {
   var game = new BattleshipGame(gameConfig)
 }
+
+// TODO: Make the game selectable and resizeable

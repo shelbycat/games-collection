@@ -7,9 +7,11 @@ div#wrapper {
 div#game {
   vertical-align: center;
 }
+html {
+  height: 100%;
+}
 body {
+  min-height: 99%;
   text-align: center;
-  height: 100vh;
-  width: 100vw;
   background-color: #1e1e1e;
 }
