@@ -1,12 +1,12 @@
-import img from "~/assets/images/background_stars_01.png"
+import img from "~/assets/images/background_stars_01.png";
 
-console.log(img)
+console.log(img);
 
 export class MainScene extends Phaser.Scene {
   constructor() {
     super({
       key: "MainScene",
-    })
+    });
   }
   init(params): void {
     // TODO

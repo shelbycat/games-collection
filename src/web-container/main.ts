@@ -1,3 +1,3 @@
 // Import Assets for Webpack to handle
-import "./favicon.ico"
-import "./styles.css"
+import "./favicon.ico";
+import "./styles.css";
