@@ -103,9 +103,7 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
     plugins: [new TsconfigPathsPlugin({})],
-    alias: {
-      "~/": path.resolve(__dirname, "./src/"),
-    },
+    // alias: {}, // Specify Alias in tsconfig.json
   },
   output: {
     filename: "[name].bundle.js",
