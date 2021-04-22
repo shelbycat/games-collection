@@ -5,7 +5,10 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
-  entry: ["./src/main.ts"],
+  entry: {
+    main: "./src/main.ts",
+    "games/bts": "./src/games/battleship/index.ts",
+  },
   module: {
     rules: [
       {
@@ -35,6 +38,24 @@ module.exports = {
       // `...`,
       new CssMinimizerPlugin(),
     ],
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name(module) {
+            // get the name. E.g. node_modules/packageName/not/this/part.js
+            // or node_modules/packageName
+            const packageName = module.context.match(
+              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+            )[1];
+
+            // npm package names are URL-safe, but some servers don't like @ symbols
+            return `vendors/npm.${packageName.replace("@", "")}`;
+          },
+        },
+      },
+    },
   },
   devtool: "inline-source-map",
   devServer: {
@@ -56,7 +77,7 @@ module.exports = {
     },
   },
   output: {
-    filename: "battleship.bundle.js",
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
   mode: "development",
