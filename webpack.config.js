@@ -4,6 +4,28 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
+function assetPathTransformer(url, resourcePath, context) {
+  if (/^\_/.test(url)) {
+    // not in context (src/games/*/assets
+    let transformed = url.replace(/^\_/, "").replace(/assets[/\\]/, "");
+    return `assets/public/${transformed}`;
+  }
+  if (true) {
+    // expect /src/games/<game>/assets/path-to-asset
+    // url = <game>/assets/path-to-asset
+    let game = url.split(/[/\\]/)[0];
+    let folder =
+      {
+        battleship: "bts",
+      }[game] || game;
+    // remove game name from url
+    url = url.split(/[/\\]/).slice(1).join("/");
+
+    return `games/${folder}/${url}`;
+  }
+  return url;
+}
+
 module.exports = {
   entry: {
     main: "./src/main.ts",
@@ -21,13 +43,22 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+        test: /\.ico$/,
         loader: "file-loader",
         options: {
-          outputPath: "./assets/images",
-          publicPath: "./assets/images",
+          name: "[name].[ext]",
         },
-        // type: "asset/resource",
+      },
+      {
+        // Anything in an assets folder that ends in one of these extensions
+        test: /assets[\\/].*\.(jpe?g|png|json|gif|svg|woff|ttf|wav|mp3)$/,
+        loader: "file-loader",
+        options: {
+          outputPath: assetPathTransformer,
+          publicPath: assetPathTransformer,
+          name: "[path][name].[ext]",
+          context: "./src/games/",
+        },
       },
     ],
   },
