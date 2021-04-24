@@ -51,7 +51,7 @@ module.exports = {
       },
       {
         // Anything in an assets folder that ends in one of these extensions
-        test: /assets[\\/].*\.(jpe?g|png|json|gif|svg|woff|ttf|wav|mp3)$/,
+        test: /assets[\\/].*\.(jpe?g|png|gif|svg|woff|ttf|wav|mp3)$/,
         loader: "file-loader",
         options: {
           outputPath: assetPathTransformer,

@@ -5,6 +5,8 @@
     "paths": {
       "~/*": ["./*", "games/*"],
       "~bts/*": ["./games/battleship/*"]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   }
 }
