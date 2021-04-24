@@ -1,4 +1,4 @@
-import { imagePaths } from "./asset-loaders";
+import { preload as preloadAssets } from "./asset-loaders";
 import { BoardGameObject } from "./game-objects/board.go";
 import { SquareGameObject } from "./game-objects/square.go";
 
@@ -14,11 +14,7 @@ export class MainScene extends Phaser.Scene {
     // TODO
   }
   preload(): void {
-    this.load.setBaseURL("");
-    this.load.image("background", imagePaths.starBackground);
-    BoardGameObject.preload(this);
-    SquareGameObject.preload(this);
-    this.load.image("shipsAndMarkers", imagePaths.shipsAndMarkers);
+    preloadAssets(this);
     // TODO
   }
 
