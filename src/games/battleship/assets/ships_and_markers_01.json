@@ -1,0 +1,72 @@
+{
+  "frames": [
+    {
+      "filename": "ship_length_5",
+      "frame": { "x": 15, "y": 15, "w": 40, "h": 163 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 40, "h": 163 },
+      "sourceSize": { "w": 40, "h": 163 },
+      "pivot": { "x": 0.5, "y": 0.166666666666666 }
+    },
+    {
+      "filename": "ship_length_4",
+      "frame": { "x": 55, "y": 13, "w": 40, "h": 130 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 40, "h": 90 },
+      "sourceSize": { "w": 40, "h": 90 },
+      "pivot": { "x": 0.5, "y": 0.2 }
+    },
+    {
+      "filename": "ship_length_3",
+      "frame": { "x": 105, "y": 13, "w": 40, "h": 100 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 40, "h": 70 },
+      "sourceSize": { "w": 40, "h": 70 },
+      "pivot": { "x": 0.5, "y": 0.25 }
+    },
+    {
+      "filename": "ship_length_2",
+      "frame": { "x": 150, "y": 13, "w": 40, "h": 70 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 40, "h": 50 },
+      "sourceSize": { "w": 40, "h": 50 },
+      "pivot": { "x": 0.5, "y": 0.333333333 }
+    },
+
+    {
+      "filename": "hit_zone_uncalled",
+      "frame": { "x": 195, "y": 25, "w": 15, "h": 15 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 15 },
+      "sourceSize": { "w": 15, "h": 15 },
+      "pivot": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "filename": "hit_zone_miss",
+      "frame": { "x": 195, "y": 40, "w": 15, "h": 15 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 15 },
+      "sourceSize": { "w": 15, "h": 15 },
+      "pivot": { "x": 0.5, "y": 0.5 }
+    },
+    {
+      "filename": "hit_zone_hit",
+      "frame": { "x": 195, "y": 55, "w": 15, "h": 15 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 15 },
+      "sourceSize": { "w": 15, "h": 15 },
+      "pivot": { "x": 0.5, "y": 0.5 }
+    }
+  ],
+  "meta": {
+    "size": { "w": 1023, "h": 691 },
+    "scale": "1"
+  }
+}

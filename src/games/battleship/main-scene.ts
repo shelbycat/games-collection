@@ -35,6 +35,17 @@ export class MainScene extends Phaser.Scene {
     console.log(board instanceof Phaser.GameObjects.Sprite);
     board.scale = 1.3;
     board.setPosition(center.x, center.y);
+
+    var atlasTexture = this.textures.get("shipsAndMarkersAtlas");
+    var frames = atlasTexture.getFrameNames();
+
+    let x: number = 200;
+    frames.forEach((name) => {
+      let y = this.height / 2;
+      x += 40;
+      console.log(name);
+      let sprite = this.add.sprite(x, y, "shipsAndMarkersAtlas", name);
+    });
   }
   update(time): void {
     // TODO
